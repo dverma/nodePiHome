@@ -1,0 +1,11 @@
+{
+  "name": "nodePiHome",
+  "main" : "server.js",
+  "depepndencies" : 
+	{
+		"express" : "~4.13.4",
+		"morgan" : "~1.0.0",
+		"body-parser" : "~1.0.0",
+		"method-override" : "~1.0.0"
+	}
+}
