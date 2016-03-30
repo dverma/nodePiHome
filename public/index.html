@@ -10,6 +10,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
 	<script src="/app/app.js"></script> 
 </head>
+<body ng-controller="mainController">
 <header>
 	<nav class="navbar navbar-default">
 		<div class="container">
@@ -22,15 +23,14 @@
 			</ul>
 		</div>
 	</nav>
-</header>
-<body ng-controller="mainController">	
+</header>	
 	<!-- MAIN CONTENT -->
 	<div id="main">
 		<!-- angular templating -->
 		<div ng-view></div>
 	</div>
-</body>
 <!-- FOOTER -->
 <footer class="text-center">
 	Copyright &copy; Dhawal Verma
 </footer>
+</body>
