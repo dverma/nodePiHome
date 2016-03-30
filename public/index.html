@@ -1,81 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="hostApp">
 <head>
 <meta charset=utf-8>
-<title>Home Website</title>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <style>
-  .toggler { width: 500px; height: 200px; }
-  #button { padding: .5em 1em; text-decoration: none; }
-  #effect { width: 400px; height: 160px; padding: 0.4em; position: relative; }
-  #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
-  </style>
-  <script>
-  $(function() {
-    // run the currently selected effect
-    function runEffect() {
-      // get effect type from
-      var selectedEffect = $( "#effectTypes" ).val();
- 
-      // most effect types need no options passed by default
-      var options = {};
-      // some effects have required parameters
-      if ( selectedEffect === "scale" ) {
-        options = { percent: 100 };
-      } else if ( selectedEffect === "size" ) {
-        options = { to: { width: 280, height: 185 } };
-      }
- 
-      // run the effect
-      $( "#effect" ).show( selectedEffect, options, 2500, callback );
-    };
- 
-    //callback function to bring a hidden box back
-    function callback() {
-      setTimeout(function() {
-        $( "#effect:visible" ).removeAttr( "style" ).fadeOut();
-      }, 5000 );
-    };
- 
-    // set effect from select menu value
-    $( "#button" ).click(function() {
-      runEffect();
-    });
- 
-    $( "#effect" ).hide();
-  });
-  </script>
+	<title>Home Website</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
+	<script src="/app/app.js"></script> 
 </head>
-<body>
-<div align="center">	
-<img src='/images/pi-node.png' />
-	<br/>
-<div class="toggler">
-  <div id="effect" class="ui-widget-content ui-corner-all">
-	<h3>Hello from the Node Server on Dhawal's Raspberry Pi!</h3>
-	<p> More exciting stuff to come soon... Stay tuned! </p>
-  </div>
-</div>
-<select name="effects" id="effectTypes">
-  <option value="blind">Blind</option>
-  <option value="bounce">Bounce</option>
-  <option value="clip">Clip</option>
-  <option value="drop">Drop</option>
-  <option value="explode">Explode</option>
-  <option value="fold">Fold</option>
-  <option value="highlight">Highlight</option>
-  <option value="puff">Puff</option>
-  <option value="pulsate">Pulsate</option>
-  <option value="scale">Scale</option>
-  <option value="shake">Shake</option>
-  <option value="size">Size</option>
-  <option value="slide">Slide</option>
-</select>
- 
-<button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
-</div>
+<header>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Dhawal's Pi Web Server</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+			</ul>
+		</div>
+	</nav>
+</header>
+<body ng-controller="mainController">	
+	<!-- MAIN CONTENT -->
+	<div id="main">
+		<!-- angular templating -->
+		<div ng-view></div>
+	</div>
 </body>
-</html>
+<!-- FOOTER -->
+<footer class="text-center">
+	Copyright &copy; Dhawal Verma
+</footer>
