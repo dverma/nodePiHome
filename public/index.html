@@ -30,14 +30,14 @@
       }
  
       // run the effect
-      $( "#effect" ).show( selectedEffect, options, 10000, callback );
+      $( "#effect" ).show( selectedEffect, options, 2500, callback );
     };
  
     //callback function to bring a hidden box back
     function callback() {
       setTimeout(function() {
         $( "#effect:visible" ).removeAttr( "style" ).fadeOut();
-      }, 1000 );
+      }, 5000 );
     };
  
     // set effect from select menu value
