@@ -1,1 +1,2 @@
-node_modules/*
+#Node modules directory dont need to go in!
+node_modules/
